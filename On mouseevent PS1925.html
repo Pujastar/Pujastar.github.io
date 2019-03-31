@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+    </head>
+    <body>
+        <header>
+            <h2>PS1925 Gravity event</h2>
+        </header>
+        <section>
+            <article>
+                <img src="PS1925-1.jpg"  id ="event" onMouseOver="rotatepic() ;"
+                onMouseOut="resetpic() ;">
+                <script type = "text/javascript">
+                var picArray=new Array();
+                picArray[0]="PS1925-1.jpg";
+                picArray[1]="PS1925-2.jpg";
+                picArray[2]="PS1925-3.jpg";
+                picArray[3]="PS1925-4.jpg";
+                picArray[4]="PS1925-5.jpg";
+                picArray[5]="PS1925-6.jpg";
+
+                var idx = 1 ;
+                var timer;
+                function resetpic()
+                {
+                    clearTimeout(timer);
+                    document.getElementById("event") .src=picArray[0];
+                }
+                function rotatepic()
+                {
+                    document.getElementById("event").src=picArray[idx];
+                    if(idx==5)
+                    idx =0;
+                    else
+                    idx++;
+                    timer = setTimeout("rotatepic()",500);
+                }
+                </script>
+            </article>
+        </section>
+    </body>
+</html>
